@@ -6,7 +6,7 @@ var c = 12; //Declare variable c and assign it the value of 12 in one statement.
 console.log(a); //Print the content of variable a 
 console.log(b); //Print the content of variable b 
 console.log(c); //Print the content of variable c
- 
+
 a = 10; //Assign variable a the value of 10 
 b = 20; //Assign variable b the value of 20 
 c = a + b; //Add value in a and b and put the result in variable c. 
@@ -20,3 +20,4 @@ a++; //Increment a value.
 console.log(a); //Displays 11 in console. 
 b--; //Increment b value. 
 console.log(b); //Displays 19 in console. 
+
