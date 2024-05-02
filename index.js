@@ -21,3 +21,10 @@ console.log(a); //Displays 11 in console.
 b--; //Increment b value. 
 console.log(b); //Displays 19 in console. 
 
+//String Operators
+
+firstName = "Abdul-Qoyyum"; 
+lastName = "Oyadeyi"; 
+fullName = firstName + " " + lastName; //Concatenate firstName, whitespace and lastName 
+console.log(fullName); //This should output the full name Abdul-Qoyyum Oyadeyi. 
+
