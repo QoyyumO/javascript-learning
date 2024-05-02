@@ -54,3 +54,9 @@ console.log(a > 3 || b < 3); //Prints true as at least one condition (b < 3) is 
 console.log(!(a < 3)); //Prints false as condition (NOT a < 3) is false. 
 console.log(!(a < 3) || !(b > 3)); //Prints true as one of the conditions (NOT b > 3) is true.
 
+//Ternary (conditional) operations
+
+var age = 17; 
+var adult = (age > 20)? "Yes" : "No"; 
+console.log(adult); //This should display the string "No" 
+
