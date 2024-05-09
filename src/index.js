@@ -74,3 +74,9 @@ new Promise((resolve, reject) => {
     }).then(() =>{ 
         logger(`This function is executed after success or failure is returned`) 
     }); 
+
+    let url = 'https://jsonplaceholder.typicode.com/users/1'; //Get data for a user with id 1 
+fetch(url) 
+    .then(response => response.json()) //convert data returned to json 
+    .then(data => logger(`Data: Id = ${data.id}, Name = ${data.name}, Email = ${data.email}`)) //use the json data 
+    .catch(error => logger(`Error: ${error}`));
