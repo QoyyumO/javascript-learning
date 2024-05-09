@@ -48,5 +48,13 @@ export class Person{
         return toTitleCase(this.firstName) 
     } 
 }; 
-
+//static methods 
+export class CustomMath{ 
+    static sqrt(a){ 
+    return Math.sqrt(a); 
+        } 
+        static pow(a,b){ 
+            return Math.pow(a,b); 
+        } 
+    } 
 export default logger;
