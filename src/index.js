@@ -22,5 +22,7 @@ try{
 
 let person1 = new Person("Abdul-Qoyyum Oyadeyi", "Oyadeyi", "Male",1.84); 
 let person2 = new Person("Mary", "Joseph", "Female", undefined); 
-log(`Person 1 is ${person1.firstName} whose height is ${person1.height}. Person 2 is ${person2.firstName} whose 
-height is ${person2.height}`); 
+person1.firstName = "peter"; //here we have deliberately used lowercase for first letter 
+person2.firstName = "maria"; //here we have deliberately used lowercase for first letter 
+logger(`Person 1 is ${person1.getFirstName()} whose height is ${person1.height}. Person 2 is ${person2.getFirstName()} whose height is ${person2.height}`); //using getFirstName() to get firstName.  
+
