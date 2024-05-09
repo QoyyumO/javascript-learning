@@ -1,0 +1,13 @@
+{
+  "name": "es6-primer",
+  "version": "0.0.1",
+  "description": "Class tasks on EcmaScript 2015 and above",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdul-Qoyyum Oyadeyi",
+  "license": "MIT",
+  "type": "module"
+   
+}
