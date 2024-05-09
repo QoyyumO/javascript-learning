@@ -1,5 +1,5 @@
 //console.log("Now testing EcmaScript")
-import logger, {appName, dummyFunction} from './tools.js';
+import logger, {appName, dummyFunction, dummyFunction2} from './tools.js';
 
 logger ("I am logging using tools module");
 
@@ -8,3 +8,6 @@ There is a function that returns "' + dummyFunction()+ '"')
 
 logger(`Welcome! The application name is "${appName}". 
 There is a function that returns "${dummyFunction()}".`);
+
+logger(`Welcome! The application name is "${appName}". There is a function 
+that returns "${dummyFunction2()}".` );
