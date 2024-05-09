@@ -32,4 +32,14 @@ export const multiplier1= (...numbers) =>{
     } 
     return product; 
 } 
+
+export class Person{ 
+    constructor(firstName, lastName, gender, height){ 
+    this.firstName = firstName; 
+    this.lastName = lastName; 
+    this.gender = gender; 
+    this.height = height; 
+    } 
+}; 
+
 export default logger;

@@ -1,5 +1,5 @@
 //console.log("Now testing EcmaScript")
-import logger, {appName, dummyFunction, dummyFunction2,genericFunction,multiplier1} from './tools.js';
+import logger, {Person,appName, dummyFunction, dummyFunction2,genericFunction,multiplier1} from './tools.js';
 
 logger ("I am logging using tools module");
 
@@ -19,3 +19,8 @@ try{
 }catch(error){ 
     logger(error.message); 
 } 
+
+let person1 = new Person("Abdul-Qoyyum Oyadeyi", "Oyadeyi", "Male",1.84); 
+let person2 = new Person("Mary", "Joseph", "Female", undefined); 
+log(`Person 1 is ${person1.firstName} whose height is ${person1.height}. Person 2 is ${person2.firstName} whose 
+height is ${person2.height}`); 
