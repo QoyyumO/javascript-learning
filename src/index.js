@@ -1,5 +1,6 @@
 //console.log("Now testing EcmaScript")
-import logger, {Person,appName, dummyFunction, dummyFunction2,genericFunction,multiplier1,CustomMath} from './tools.js';
+import logger, {User,Person,appName, dummyFunction, dummyFunction2,
+    genericFunction,multiplier1,CustomMath} from './tools.js';
 
 logger ("I am logging using tools module");
 
@@ -27,3 +28,5 @@ person2.firstName = "maria"; //here we have deliberately used lowercase for firs
 logger(`Person 1 is ${person1.getFirstName()} whose height is ${person1.height}. Person 2 is ${person2.getFirstName()} whose height is ${person2.height}`); //using getFirstName() to get firstName.  
 
 logger(CustomMath.sqrt(400)); 
+let user1 = new User("myusername","mypassword","Abdul-Qoyyum","Oyadeyi","Male",undefined); 
+logger(`The username of ${user1.firstName} is ${user1.username}`)

@@ -52,9 +52,16 @@ export class Person{
 export class CustomMath{ 
     static sqrt(a){ 
     return Math.sqrt(a); 
-        } 
-        static pow(a,b){ 
-            return Math.pow(a,b); 
-        } 
     } 
+    static pow(a,b){ 
+        return Math.pow(a,b); 
+    } 
+} 
+export class User extends Person{ 
+    constructor(username, password, firstName, lastName, gender, height){ 
+        super(firstName, lastName, gender, height); 
+        this.username = username; 
+        this.password = password; 
+    } 
+} 
 export default logger;
