@@ -30,3 +30,18 @@ logger(`Person 1 is ${person1.getFirstName()} whose height is ${person1.height}.
 logger(CustomMath.sqrt(400)); 
 let user1 = new User("myusername","mypassword","Abdul-Qoyyum","Oyadeyi","Male",undefined); 
 logger(`The username of ${user1.firstName} is ${user1.username}`)
+
+//Promises for asynchronous programming 
+
+new Promise((resolve, reject) => { 
+    setTimeout(()=>{ 
+    resolve("Timeout is over"); //send out a success feedback with data using resolve 
+    }, 1000) //set timeout for 1000ms i.e. 1second. 
+    }).then((data) => { 
+    logger(`${data}`);//This should output "Timeout is over" 
+    }).catch((error) => {//This will only be reached it the asynchronous function returned a reject statement. 
+    logger(`${error}`); 
+}); 
+
+let user2 = new User("myusername","mypassword","Abdul-Qoyyum","Oyadeyi","Male",undefined); 
+logger(`The username of ${user1.firstName} is ${user1.username}`)
