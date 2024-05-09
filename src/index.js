@@ -59,3 +59,18 @@ new Promise((resolve, reject) => {
 
 let user3 = new User("myusername","mypassword","Abdul-Qoyyum","Oyadeyi","Male",undefined); 
 logger(`The username of ${user3.firstName} is ${user3.username}`) 
+
+//3
+
+new Promise((resolve, reject) => { 
+    setTimeout(()=>{ 
+        reject("Timeout is over but I am upset. You should not have invoked a timeout in the first place. Hence I am sending a <em>reject</em> instead of a <em>resolve</em>!"); 
+        //send out a reject feedback 
+        }, 1000) 
+    }).then((data) => { 
+        logger(`${data}`);//This should output "Timeout is over" 
+    }).catch((error) => {//This will only be reached it the asynchronous function returned a reject statement. 
+        logger(`Error message received: ${error}`); 
+    }).then(() =>{ 
+        logger(`This function is executed after success or failure is returned`) 
+    }); 
