@@ -141,3 +141,34 @@ const getUserById1 = async (userId) => {
         log(`Error: ${error}`); 
     } 
 } 
+//Asunc / Await with promise.all
+
+let usersUrl3 = 'https://jsonplaceholder.typicode.com/users/'; 
+const getUserById3 = async (userId) => { 
+    let url = usersUrl + userId; 
+    try{ 
+        const response = await fetch(url); 
+        const data = await response.json(); 
+        /* 
+        The if statement below is to ensure that errors like URL not found (ie Error 404) is caught. 
+        fetch() unfortunately does not send a Promise.reject() in such a case. 
+        So here, we are throwing exception if HTTP response status is  
+        outside the OK range (the 2xx range are OK), so that it can be caught. 
+         */ 
+        if (response.status >= 200 && response.status < 300){ 
+            return data; 
+            //log(data.name); //do whatever you want with the data. You can even pass to other functions to do some work on it 
+        }else{ 
+            throw Error(response.status);//make sure that the error is not ignored by the catch() statement below. 
+        } 
+         
+    }catch(error){ 
+        //log(`Error: ${error}`);//do whatever you want to deal with error 
+        return error; 
+    } 
+} 
+Promise.all([getUserById(0),getUserById(2),getUserById(3)]) //getUserById() is deliberately passed Id of 0 in the first case to provoke Error: 404. 
+.then((data) => { 
+    logger(`User1 = ${data[0].name=='Error'?data[0]:data[0].name}; User2 = ${data[1].name}; User3 = $
+ {data[2].name}`);//display data from array 
+}) 
