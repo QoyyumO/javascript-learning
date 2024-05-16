@@ -188,3 +188,18 @@ let output = `The first yielded value is: ${myWaitList.next().value} <br/>
     Hopefully we still have room for a next call. Here is the return: ${myWaitList.next().value} <br/> 
     What if we call again when there is no more value to yield. Here is what we get: ${myWaitList.next().value}` 
 log(output); 
+//Modifying the above
+function* waitList(list){ 
+    for (let [index, value] of list.entries()){ 
+        yield `Hi ${value}. You are number ${index + 1} on the list` 
+    } 
+    //return; terminates a generator at any point. It does not have to be used at all. It can be used between yield statements if the developer wants the rest of the yield to be ignored. 
+} 
+let myWaitList1 = waitList(['Peter','Mary','John']); //call waitList 
+//Prepare the output. 
+let output1 = `The first yielded value is: ${myWaitList.next().value} <br/> 
+    Here is what is returned in the next call: ${myWaitList.next().value} <br/> 
+    Hopefully we still have room for a next call. Here is the return: ${myWaitList.next().value} <br/> 
+274
+What if we call again when there is no more value to yield. Here is what we get: ${myWaitList.next().value}` 
+logger(output1); 
