@@ -1,6 +1,6 @@
 //console.log("Now testing EcmaScript")
 import logger, {User,Person,appName, dummyFunction, dummyFunction2,
-    genericFunction,multiplier1,CustomMath} from './tools.js';
+    genericFunction,multiplier1,CustomMath,genericFunction4} from './tools.js';
 
 logger ("I am logging using tools module");
 
@@ -80,3 +80,5 @@ fetch(url)
     .then(response => response.json()) //convert data returned to json 
     .then(data => logger(`Data: Id = ${data.id}, Name = ${data.name}, Email = ${data.email}`)) //use the json data 
     .catch(error => logger(`Error: ${error}`));
+
+    logger(genericFunction4(4,3,6,9,10,23,56.93));

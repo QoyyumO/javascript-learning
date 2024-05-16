@@ -64,4 +64,24 @@ export class User extends Person{
         this.password = password; 
     } 
 } 
+
+export const genericFunction4 = (m, c, ...x) => { 
+    //This function returns an array of {x,y} objects for all the x arguments passed. 
+    //Map the array of x into an array of {x,y} object, with the y value calculated each time. 
+    let coordinates = x.map((x) => { 
+        return {'x': x, 'y' : (m*x) + c}; 
+    }) 
+    //loop through our array of {x,y} and prepare the output string to be returned. We can do this with the forEach() method of array object or use the for…of loop introduced in ES6 as shown below 
+    let output = 'The (x,y) values are as follows: ' 
+    for (let coordinate of coordinates){ 
+        let xy = `(${coordinate.x},${coordinate.y})`  
+        output+=xy; 
+    } 
+   //Previous style…(Going forward, we shall only be using the new for…of loop in such scenario) 
+   //coordinates.forEach((coordinate)=>{ 
+   //     let xy = `(${coordinate.x},${coordinate.y})`; 
+   //     output+=xy; 
+    //}) 
+    return output; 
+} 
 export default logger;
