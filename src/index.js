@@ -116,3 +116,28 @@ const getUserById = async (userId) => { //user id parameter is expected
     logger (data.name); //log the feedback. 
 } 
 getUserById(2); //This should display 'Ervin Howell' on the browser.
+
+//Async/await with try…catch 
+
+let usersUrl1 = 'https://jsonplaceholder.typicode.com/users/'; 
+const getUserById1 = async (userId) => { 
+    let url = usersUrl + userId; 
+    try{ 
+        const response = await fetch(url); 
+        const data = await response.json(); 
+        /* 
+        The if statement below is to ensure that errors like URL not found (ie Error 404) is caught. 
+        fetch() unfortunately does not send a Promise.reject() in such a case. 
+        So here, we are throwing exception if HTTP response status is  
+        outside the OK range (the 2xx range are OK), so that it can be caught. 
+         */ 
+        if (response.status >= 200 && response.status < 300){ 
+            log(data.name); //do whatever you want with the data. You can even pass to other functions to do some work on it 
+        }else{ 
+            throw Error(response.status);//make sure that the error is not ignored by the catch() statement below. 
+        } 
+         
+    }catch(error){ 
+        log(`Error: ${error}`); 
+    } 
+} 
