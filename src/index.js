@@ -172,3 +172,19 @@ Promise.all([getUserById(0),getUserById(2),getUserById(3)]) //getUserById() is d
     logger(`User1 = ${data[0].name=='Error'?data[0]:data[0].name}; User2 = ${data[1].name}; User3 = $
  {data[2].name}`);//display data from array 
 }) 
+
+//Iterators/Generators
+
+function* waitList(list){ 
+    for(let person of list){ 
+        yield person; //create yield point for each item on the list 
+    } 
+    //return; terminates a generator at any point. It does not have to be used at all. It can be used between yield statements if the developer wants the rest of the yield to be ignored. 
+} 
+let myWaitList = waitList(['Peter','Mary','John']); //call waitList 
+//Prepare the output. 
+let output = `The first yielded value is: ${myWaitList.next().value} <br/> 
+    Here is what is returned in the next call: ${myWaitList.next().value} <br/> 
+    Hopefully we still have room for a next call. Here is the return: ${myWaitList.next().value} <br/> 
+    What if we call again when there is no more value to yield. Here is what we get: ${myWaitList.next().value}` 
+log(output); 
