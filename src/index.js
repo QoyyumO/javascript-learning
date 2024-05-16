@@ -105,3 +105,14 @@ If not passed, milliseconds parameter defaults to 1000 */
     }; 
     //call the async function. 
     usePromiseAwareTimeout(3000);
+
+
+    // async/await using an existing Promise aware function fetch().
+    let usersUrl = 'https://jsonplaceholder.typicode.com/users/'; 
+const getUserById = async (userId) => { //user id parameter is expected 
+    let url = usersUrl + userId; //get the specific url for the user to fetch 
+    const response = await fetch(url); //make a call to the asynchronous fetch() 
+    const data = await response.json(); //make a call to the asynchronous conversion to json. 
+    logger (data.name); //log the feedback. 
+} 
+getUserById(2); //This should display 'Ervin Howell' on the browser.
