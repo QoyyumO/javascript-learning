@@ -64,7 +64,7 @@ export class User extends Person{
         this.password = password; 
     } 
 } 
-
+// Default Rest parameter
 export const genericFunction4 = (m, c, ...x) => { 
     //This function returns an array of {x,y} objects for all the x arguments passed. 
     //Map the array of x into an array of {x,y} object, with the y value calculated each time. 
