@@ -2,7 +2,7 @@
 import logger, {User,Person,appName, dummyFunction, dummyFunction2,
     genericFunction,multiplier1,CustomMath,genericFunction4} from './tools.js';
 
-logger ("I am logging using tools module");
+    logger ("I am logging using tools module");
 
 logger('Welcome! The application name is "'+ appName + '". \n\
 There is a function that returns "' + dummyFunction()+ '"')
@@ -49,7 +49,8 @@ logger(`The username of ${user2.firstName} is ${user2.username}`)
 //2
 new Promise((resolve, reject) => { 
     setTimeout(()=>{ 
-        reject("Timeout is over but I am upset. You should not have invoked a timeout in the first place. Hence I am sending a <i>reject</i> instead of a <i>resolve</i>!"); //send out a reject feedback 
+        reject("Timeout is over but I am upset. You should not have invoked a timeout\
+         in the first place. Hence I am sending a <i>reject</i> instead of a <i>resolve</i>!"); //send out a reject feedback 
         }, 1000) 
     }).then((data) => { 
         logger(`${data}`);//This should output "Timeout is over" if resolve("Timeout is over") is invoked 
@@ -82,3 +83,25 @@ fetch(url)
     .catch(error => logger(`Error: ${error}`));
 
     logger(genericFunction4(4,3,6,9,10,23,56.93));
+
+    //Async or Await
+    //Define the function that will return new Promise that wraps the asynchronous call to setTimeout() 
+const promiseAwareTimeout = (milliseconds=1000) => { /*The function expects milliseconds to be passed.
+If not passed, milliseconds parameter defaults to 1000 */
+        return new Promise((resolve, reject) => { 
+            setTimeout(()=>{ 
+                resolve(`Timeout of ${milliseconds} milliseconds is over`); //send out a success feedback with data using resolve 
+            }, milliseconds) //set timeout for passed milliseconds. Defaults to 1000 
+        }); 
+}
+    //define a function that uses our Promise executor 
+    const usePromiseAwareTimeout = async (milliseconds) => { 
+        logger('About to call timeout') 
+        try{ 
+            logger(await promiseAwareTimeout(milliseconds)); 
+        }catch(error){ 
+            logger(error); 
+        } 
+    }; 
+    //call the async function. 
+    usePromiseAwareTimeout(3000);
