@@ -233,3 +233,15 @@ function square(number){
     console.log(numberSquared); //The function returns 400 
     console.log(number); //The value of number variable outside the function remains 20 
 
+
+//Capturing arguments as array within the function - the arguments object 
+
+function multiplier(){ 
+    var product = 1; 
+    for (var x=0; x < arguments.length; x++){ 
+    product = product * arguments[x]; 
+        } 
+    return product; 
+    } 
+    console.log(multiplier(10,30));//Prints 300 to the console 
+    console.log(multiplier(10,30,10));//Prints 3000 to the console 
