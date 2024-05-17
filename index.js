@@ -346,4 +346,11 @@ function Person(firstName, lastName, height, weight){
     this.weight = weight; 
     //Below is a method 
     this.getFullName = function(){ return this.firstName + " " + this.lastName} 
-    } 
+}
+//Instantiating an object
+var person1 = new Person("Abdul", "Oyadeyi",1.81, 90); 
+var person2 = new Person("Mary", "Joseph", 1.7, 79) 
+console.log (person1.firstName); //Prints out Abdul 
+console.log (person1.getFullName()); //Prints out Abdul-Qoyadeyi
+console.log (person2.firstName); //Prints out Mary 
+console.log (person2.getFullName()); //Prints out Mary Joseph  
