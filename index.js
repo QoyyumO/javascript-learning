@@ -76,3 +76,13 @@ typeof  "Abdul-Qoyyum Oyadeyi";  //Returns the value "string"
 typeof false;  //Returns the value "boolean" 
 typeof (10 + 10);  //Returns the value "number" 
 typeof 33;  //Returns the value "number" 
+
+// Making decisions
+//If-else statements
+var minimumVotingAge = 18; 
+var age = 17; 
+if (age < minimumVotingAge){ 
+console.log("Not eligible to vote"); 
+}else{ 
+console.log("Eligible to vote"); 
+} 
