@@ -262,3 +262,18 @@ function sum(number1, number2){
 console.log(sum(2,3)); //Call sum() function and print to console the total returned. 
 console.log(sum(10,20)); //Call sum() function and print to console the total returned. 
 console.log(accumulatedTotal); //Show the latest value held in the global variable. This should return 35 
+
+//Grouping data
+//Array
+
+//Declare a variable named vehicles and assign an array literal that contains three elements 
+var vehicles = ["car","lorry","trailer"];  
+console.log(vehicles); //Prints out the array literal [ 'car', 'lorry', 'trailer' ] 
+
+//Declare a variable named basket and assign an empty array literal. 
+var basket = [ ]; 
+console.log(basket); //Prints out the array literal [ ] 
+
+//Declare a variable named myExpressions and assign an array literal which contains expressions. 
+var myExpressions = ["car", 2+3, 10, true];  //The second element includes a plus operation 
+console.log(myExpressions); //Prints out [ 'car', 5, 10, true] 
