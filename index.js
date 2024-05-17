@@ -354,3 +354,19 @@ console.log (person1.firstName); //Prints out Abdul
 console.log (person1.getFullName()); //Prints out Abdul-Qoyadeyi
 console.log (person2.firstName); //Prints out Mary 
 console.log (person2.getFullName()); //Prints out Mary Joseph  
+
+//Differentiating between constructor and prototype in classical JavaScript
+person1.constructor;
+Person.prototype.complexion = "dark brown";
+person1.complexion = "light brown"; //Specify complexion value for object instance, person1. 
+console.log(person1.complexion);  //Prints out light brown. 
+console.log(person2.complexion); //Prints out the default value for complexion i.e. dark brown. 
+
+Person.prototype.getComplexion = function ( ){ 
+    return this.complexion 
+    } 
+    Person.prototype.setComplexion = function (complexion){ 
+    this.complexion = complexion; 
+    } 
+    person1.setComplexion('black'); //Use the method just added to blueprint person 
+    console.log(person1.getComplexion( )); //Prints out black.
