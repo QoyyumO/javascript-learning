@@ -169,3 +169,31 @@ x+= 1;
 console.log(x) 
 }while(x < 10);
 
+// read-line sync with do while loop
+var readlineSync = require('readline-sync'); //make the module just installed available for use in our program 
+var answer; //declare variable named answer; 
+do{ 
+//use question() function to read input and assign the value to answer 
+answer = readlineSync.question('What should I do? [Type "exit" for me to quit]: '); 
+console.log('You asked me to '+ answer) 
+}while(answer != 'exit')
+
+// use of the asynchronous in-built readline module 
+
+var readline = require('readline'); //load the readline module into the runtime environment 
+//Next, create the input/output interface as required by readline module. 
+var readlineAsync = readline.createInterface({ 
+input: process.stdin, 
+output: process.stdout 
+}); 
+//Next, declare and define a function named recursiveReadLineAsync 
+function recursiveReadLineAsync()  { 
+readlineAsync.question('What should I do? [Type "exit" for me to quit]: ', function (answer){ 
+console.log('You asked me to ' + answer) 
+if (answer == 'exit') //Condition for terminating further self call 
+return readlineAsync.close(); //quit the function if answer == exit  
+recursiveReadLineAsync(); //No exit yet. Call self again to ask another question. 
+}); 
+}; 
+//Finally, invoke the defined function to start the recursion 
+recursiveReadLineAsync(); 
