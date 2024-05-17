@@ -290,3 +290,15 @@ console.log(myExpressions[3]); //Prints out fals
 
 var myExpressions = ["car", , 10, true];  //The second element (i.e. index position 1), is undefined 
 console.log(myExpressions[1]); //Prints out undefined
+
+//object literals
+var myObject = { 
+    name: { 
+    firstName : "Pius", 
+    surname: "Onobhayedo" 
+        }, 
+    expertise: "Software design and development", 
+    languages: ["Python","JavaScript","Java","C++"], 
+    isRetired: false, 
+    favouriteCombination: 3 + 3 
+}
