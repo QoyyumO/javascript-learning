@@ -324,12 +324,8 @@ console.log(myObject['name']['firstName']); //Also prints out Abdul.
 myObject.newProperty = "another property added"; //Add a new property named newProperty 
 console.log(myObject); //Prints out the string, another property added
 
-//The delete and in operators for objects 
-delete object.property 
-//or
-delete object['property'] 
 
-//in operator in object lierals
+//the delete and in operator in object lierals
 var phones = { 
 make: 'Samsung', 
 model: 'S7', 
@@ -338,3 +334,16 @@ cost: 500
 console.log('make' in phones); //Prints out true 
 delete phones.make; //Delete property phones.make 
 console.log('make' in phones); //Prints out false
+
+//group data and functionality (or methods) together
+//User-created object blueprints 
+
+function Person(firstName, lastName, height, weight){ 
+    //Below are properties 
+    this.firstName = firstName; 
+    this.lastName = lastName; 
+    this.height = height; 
+    this.weight = weight; 
+    //Below is a method 
+    this.getFullName = function(){ return this.firstName + " " + this.lastName} 
+    } 
