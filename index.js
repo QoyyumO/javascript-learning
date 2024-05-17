@@ -415,3 +415,27 @@ function sleep(milliseconds) {
     } 
     //Call sleep 
     sleep(3000); 
+
+//c. RegExp 
+var re = new RegExp('xyz'); //'xyz' is the pattern to be matched. 
+//the literal equivalent can be used to define a pattern as shown below: 
+var re = /xyz/; 
+
+var searchString = "Locate xyz pattern in this text. The xyz could be in XYZ location"; 
+//Simply check if pattern is in searchString using test() method. 
+console.log(re.test(searchString)); //Should return true as xyz pattern is present in searchString. 
+//Find index position using exec() method 
+console.log(re.exec(searchString)); //Returns an array containing pattern, index and input as shown in comment 
+below 
+/*[ 'xyz', 
+index: 7, 
+input: 'Locate xyz pattern in this text. The xyz could be in XYZ location' ]*/ 
+//Find index position using search() method of String object passing the pattern as argument. 
+console.log(searchString.search(re)); //Returns index position.
+
+// To return all, loop is required
+var result; 
+while((result = re.exec(searchString))!= null){ //loop until no more match 
+//display the index found and the string 
+console.log("Index position " + result.index + " contains " + result[0]); 
+}
