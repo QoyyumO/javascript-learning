@@ -370,3 +370,48 @@ Person.prototype.getComplexion = function ( ){
     } 
     person1.setComplexion('black'); //Use the method just added to blueprint person 
     console.log(person1.getComplexion( )); //Prints out black.
+
+//Built-in object blueprints 
+// a. Maths
+Math.E; //The static property E holds the value of Euler’s number i.e. 2.718281828459045. 
+Math.PI; //The static property PI holds the value of Pi i.e. 3.141592653589793. 
+Math.cos(45); //Method returns the cosine of number passed as argument. 
+Math.abs(-30); //Method returns the absolute number equivalent of argument. 
+Math.random( ); //Method returns random floating-point number between 0 and 1, inclusive of 0 and exclusive of 1. 
+Math.max(10,5,60); //Method returns the maximum number among the arguments passed.  
+Math.min(10,5,60); //Method returns the minimum number among the arguments passed. 
+
+//b. Dates
+var today = new Date(); //Get today’s date 
+//Instantiate new Date passing year, month-index and day in numbers 
+var birthday = new Date(1980,4,30); //Note that month index is 0-11 for Jan-Dec 
+//Instantiate new Date passing equivalent datetime string with date same as above 
+var birthday = new Date('May 30, 1980 19:00:00'); 
+//Instantiate new Date passing date and time using numbers 
+var birthday = new Date(1980, 4, 30, 19, 0, 0);//Passing year, month-index, day, hour, min, sec as numbers 
+//Below is a simple function that calculates present age 
+function calculateAge(birthday){ 
+var today = new Date(); 
+var difference = today - birthday; //Returns equivalent of time elapsed since 1970 i.e. epoch time 
+213
+//Get the equivalent year for difference 
+var yearEquivalent = new Date(difference).getFullYear(); 
+//Subtract 1970 to get age. 
+return yearEquivalent - 1970; 
+} 
+//Invoke function calculateAge() 
+var birthday = new Date (1980,12,30); 
+console.log(calculateAge(birthday)); //Prints out birthday 
+
+//Time elapsed in milliseconds can also be calculated based on the getTime() method
+
+function sleep(milliseconds) { 
+    console.log("Going to sleep for " + milliseconds + " milliseconds...") 
+    var begin = new Date().getTime(); 
+    do{ 
+    nextTime = new Date().getTime(); 
+    }while(nextTime - begin < milliseconds) 
+    console.log("Sleep over"); 
+    } 
+    //Call sleep 
+    sleep(3000); 
