@@ -425,8 +425,7 @@ var searchString = "Locate xyz pattern in this text. The xyz could be in XYZ loc
 //Simply check if pattern is in searchString using test() method. 
 console.log(re.test(searchString)); //Should return true as xyz pattern is present in searchString. 
 //Find index position using exec() method 
-console.log(re.exec(searchString)); //Returns an array containing pattern, index and input as shown in comment 
-below 
+console.log(re.exec(searchString)); //Returns an array containing pattern, index and input as shown in comment below 
 /*[ 'xyz', 
 index: 7, 
 input: 'Locate xyz pattern in this text. The xyz could be in XYZ location' ]*/ 
@@ -557,3 +556,10 @@ var y = x.slice(-16, -12); //Extract from the 16th position from the rear to the
 console.log(y); //Should output the string 'Abdul' 
 var y = x.slice(-16);// Extract the letters from position 16 from the rear 
 console.log(y);//This should return 'Abdul is found, …' 
+
+// f. Array Object
+//Create and initialize an array with 5 elements 
+var languages = ['Python', 'JavaScript', 'Java', 'C#', 'C++']; 
+//Use the object's length property to return the number of elements in the array. This should return 5. 
+console.log(languages.length);
+
