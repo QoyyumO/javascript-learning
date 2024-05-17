@@ -70,3 +70,9 @@ console.log(adult); //This should display the string "No"
 
 a= 5
 console.log(a<<1)
+
+//typeof operator
+typeof  "Abdul-Qoyyum Oyadeyi";  //Returns the value "string" 
+typeof false;  //Returns the value "boolean" 
+typeof (10 + 10);  //Returns the value "number" 
+typeof 33;  //Returns the value "number" 
