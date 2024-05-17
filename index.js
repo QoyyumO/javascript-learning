@@ -463,7 +463,7 @@ var personJSON2 =`{ \
     "degrees" : ["BSc", "MSc", "PhD"] \ 
 } `
 
-//JSON objects
+//e. JSON objects
 
 //Convert JSON string named personJSON1 to object equivalent 
 var p1Object = JSON.parse(personJSON1); 
@@ -481,3 +481,17 @@ p2Object.names.firstName; //Returns Abdul
 p1Object["complexion"]; //Also returns brown 
 p1Object["degrees"][0]; //Also returns BSc 
 p2Object["names"]["firstName"]; //Also returns Abdul
+
+
+//f . String Objects
+var x = 'This is a string literal'; 
+var y = new String ('This is a String object'); 
+console.log(x); //This will output 'This is a string literal' 
+console.log(y); //This will output '[String: 'This is a String object']' 
+console.log(y.toString()); //This will output 'This is a String object'
+
+var z = x + y; 
+console.log (z); /* This will output 'This is a string literalThis is a String object'. Notice that there is no need to invoke 
+toString() method. */ 
+console.log(x.length); //This should print out 24 which is the length of the string 'This is a string literal' 
+console.log(x.constructor); //This should output [Function: String] 
