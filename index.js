@@ -315,3 +315,26 @@ console.log(myObject.isRetired); //Prints out false
 console.log(myObject['isRetired']); //Also prints out false 
 console.log(myObject.favouriteCombination); //Prints out 6 
 console.log(myObject['favouriteCombination']); //Also prints out 6 
+
+//Accessing nested objects 
+console.log(myObject.name.firstName); //Prints out Abdul. 
+console.log(myObject['name']['firstName']); //Also prints out Abdul.
+
+// Adding new property to an existing object 
+myObject.newProperty = "another property added"; //Add a new property named newProperty 
+console.log(myObject); //Prints out the string, another property added
+
+//The delete and in operators for objects 
+delete object.property 
+//or
+delete object['property'] 
+
+//in operator in object lierals
+var phones = { 
+make: 'Samsung', 
+model: 'S7', 
+cost: 500 
+} 
+console.log('make' in phones); //Prints out true 
+delete phones.make; //Delete property phones.make 
+console.log('make' in phones); //Prints out false
