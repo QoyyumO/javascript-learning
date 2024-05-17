@@ -442,8 +442,8 @@ console.log("Index position " + result.index + " contains " + result[0]);
 
 //d. JSON string
 var personJSON1 =` { \ 
-    "firstName":"Pius", \ 
-    "lastName": "Onobhayedo", \ 
+    "firstName":"Abdul", \ 
+    "lastName": "Oyadeyi", \ 
     "complexion": "brown", \ 
     "heightInMeters": 1.7,\ 
     "programmer" : true, \ 
@@ -453,8 +453,8 @@ var personJSON1 =` { \
 
 var personJSON2 =`{ \ 
     "names":{ \ 
-        "firstName":"Pius", \ 
-        "lastName": "Onobhayedo" \ 
+        "firstName":"Abdul", \ 
+        "lastName": "Oyadeyi" \ 
     }, \ 
     "complexion": "brown", \ 
     "heightInMeters": 1.7, \ 
@@ -462,3 +462,22 @@ var personJSON2 =`{ \
     "olympicMedal" : null, \ 
     "degrees" : ["BSc", "MSc", "PhD"] \ 
 } `
+
+//JSON objects
+
+//Convert JSON string named personJSON1 to object equivalent 
+var p1Object = JSON.parse(personJSON1); 
+console.log(p1Object); 
+//Convert JSON string named personJSON2 to object equivalent 
+var p2Object = JSON.parse(personJSON2); 
+console.log(p2Object); 
+
+
+//dot notation approach to accessing object properties 
+p1Object.complexion; //Returns brown  
+p1Object.degrees[0]; //Returns BSc 
+p2Object.names.firstName; //Returns Abdul
+//Array style approach to accessing object properties 
+p1Object["complexion"]; //Also returns brown 
+p1Object["degrees"][0]; //Also returns BSc 
+p2Object["names"]["firstName"]; //Also returns Abdul
