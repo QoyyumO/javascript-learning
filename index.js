@@ -439,3 +439,26 @@ while((result = re.exec(searchString))!= null){ //loop until no more match
 //display the index found and the string 
 console.log("Index position " + result.index + " contains " + result[0]); 
 }
+
+//d. JSON string
+var personJSON1 =` { \ 
+    "firstName":"Pius", \ 
+    "lastName": "Onobhayedo", \ 
+    "complexion": "brown", \ 
+    "heightInMeters": 1.7,\ 
+    "programmer" : true, \ 
+    "olympicMedal" : null, \ 
+    "degrees" : ["BSc", "MSc", "PhD"] \ 
+} `
+
+var personJSON2 =`{ \ 
+    "names":{ \ 
+        "firstName":"Pius", \ 
+        "lastName": "Onobhayedo" \ 
+    }, \ 
+    "complexion": "brown", \ 
+    "heightInMeters": 1.7, \ 
+    "programmer" : true, \ 
+    "olympicMedal" : null, \ 
+    "degrees" : ["BSc", "MSc", "PhD"] \ 
+} `
