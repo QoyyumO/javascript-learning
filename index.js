@@ -494,4 +494,66 @@ var z = x + y;
 console.log (z); /* This will output 'This is a string literalThis is a String object'. Notice that there is no need to invoke 
 toString() method. */ 
 console.log(x.length); //This should print out 24 which is the length of the string 'This is a string literal' 
-console.log(x.constructor); //This should output [Function: String] 
+console.log(x.constructor); //This should output [Function: String] `
+
+// useful methods for accessing and manipulating strings
+//i. concat()
+var firstName = 'Abdul'; 
+var lastname = 'Oyadeyi'; 
+var fullName = firstName.concat(' ' , lastname); //Concatenate firstName, space and last name 
+console.log(fullName); //This should output the string 'Abdul Oyadeyi' 
+var fullName = firstName + ' ' + lastname; //This is equivalent to the concat statement above. 
+console.log(fullName); //This should also output the string 'Abdul Oyadeyi'
+
+//ii. includes()
+console.log(fullName.includes('Abdul')); //Outputs true
+
+//iii. search()
+
+var x = 'Let us search this text for abdul. If Abdul is found, …'; 
+var regex = /abdul/gi; //All occurences of Abdul independent of case 
+console.log(x.search(regex));  /* This will return only the index of the first occurrence of condition specified in the 
+regular expression i.e. 28 which is the index for 'abdul'  */
+
+///iv. indexof
+
+var x = 'Let us search this text for abdul. If Abdul is found, …'; 
+var searchTerm = 'abdul'; 
+var matchIndex; 
+var startIndex = 0; //start from the beginning 
+while((matchIndex = x.indexOf(searchTerm, startIndex)) != -1){ //returns -1 if no match is found 
+console.log(matchIndex); //Output the index of match 
+startIndex = matchIndex + 1; //change search start position to beyond the last match index 
+}
+// use the exec method of RegExp in indexof
+var regex = /abdul/gi; //All occurences of abdul independent of case 
+var x = 'Let us search this text for abdul. If Abdul is found, …'; 
+var match; 
+while((match = regex.exec(x))!= null){ //loop until no more match 
+//Below should display the index found and the string. Expected output are: 
+//Index position 28 contains abdul 
+//Index position 37 contains abdul 
+console.log("Index position " + match.index + " contains " + match[0]); 
+}
+
+//v . replace()
+var x = 'Let us search this text for abdul. If Abdul is found, …'; 
+var regex = /abdul/gi; //All occurences of Abdul independent of case 
+var y = x.replace(regex,'John'); //Replaces any match found with 'John' 
+console.log(y); // This should output the string 'Let us search this text for John. If John is found, …' 
+console.log(x); // This remains 'Let us search this text for abdul. If Abdul is found, …' 
+
+//vi . slice()
+var x = 'Let us search this text for abdul. If Abdul is found, …'; 
+var y = x.slice(34); //Counting from the beginning of the string (i.e. 0 index position), this will extract text from position 34 to the end. 
+console.log(y); //Expected to output the string 'If Abdul is found, …' 
+var y = x.slice(28,32);//Counting from index position 28, extract text up to position 32 
+console.log(y); // This should output the string 'abdul'
+
+var x = 'Let us search this text for abdul. If Abdul is found, …';  
+var y = x.slice(-1); //Extract from the last position. 
+console.log(y); // Should return the string '...' 
+var y = x.slice(-16, -12); //Extract from the 16th position from the rear to the 12th position from the rear 
+console.log(y); //Should output the string 'Abdul' 
+var y = x.slice(-16);// Extract the letters from position 16 from the rear 
+console.log(y);//This should return 'Abdul is found, …' 
