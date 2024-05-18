@@ -655,9 +655,8 @@ console.log(reduceOutput); //This should output 155 i.e. 100 + the accumulated v
 //h. Number Object 
 a = 10; //Allocate a number literal to variable 
 b = Number('10'); //The function converts the string '10' to the number equivalent. b = Number(10) should give same result. 
-c = new Number(10); //Instantiates a new Number object. c = new Number ('10') should give the same result 
-c.
- d = a.valueOf(); //This works but is superfluous. d = a is enough 
+c = new Number(10); //Instantiates a new Number object. c = new Number ('10') should give the same result c.
+d = a.valueOf(); //This works but is superfluous. d = a is enough 
 e = b.valueOf(); //This works but is superfluous. e = b is enough 
 f = c.valueOf(); //This is necessary for f to hold only the numeric value in c 
 console.log(a); //This should output 10 
