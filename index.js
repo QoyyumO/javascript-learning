@@ -557,5 +557,97 @@ console.log(y); //Should output the string 'Abdul'
 var y = x.slice(-16);// Extract the letters from position 16 from the rear 
 console.log(y);//This should return 'Abdul is found, …' 
 
+// g. Array Object
+//Create and initialize an array with 5 elements 
+var languages = ['Python', 'JavaScript', 'Java', 'C#', 'C++']; 
+//Use the object's length property to return the number of elements in the array. This should return 5. 
+console.log(languages.length);
 
+//number of methods for manipulating and accessing arrays
+//i. for eachc()
+var languages = ['Python', 'JavaScript', 'Java', 'C#', 'C++']; 
+//log each element in the forEach loop 
+languages.forEach(function(element) { 
+console.log(element); //This should output each element successively. 
+}); 
+/* Print each element’s position (index+1) concatenated with a dot, a space and element name. Notice here that 
+the use of variable named language to capture element name inside the function passed to the 
+method, instead of the name element. The choice is yours  */ 
+languages.forEach(function(language, index) { 
+var output = index+1 + '. ' + language; 
+console.log(output); 
+}); 
+/* The above should result in the output: 
+1. Python 
+2. JavaScript 
+3. Java 
+4. C# 
+5. C++  */
 
+//ii. indexof()
+var languages = ['Python', 'JavaScript', 'Java', 'C#', 'C++', 'JavaScript']; 
+console.log(languages.indexOf('JavaScript')); //This should output 1 
+//To return all occurrences, loop, indicating start Index each time, as we did for strings 
+var searchTerm = 'JavaScript'; 
+var matchIndex; 
+var startIndex = 0; //start from the beginning 
+while((matchIndex = languages.indexOf(searchTerm, startIndex)) != -1){ //returns -1 if no match is found 
+console.log(matchIndex); //Output the index of match 
+startIndex = matchIndex + 1; //change search start position to beyond the last match index 
+} 
+//The above while loop should output 1 and 5 to the console.
+
+//iii. push()
+var languages = ['Python', 'JavaScript', 'Java', 'C#', 'C++', 'JavaScript']; 
+languages.push('PHP'); 
+console.log(languages); //This should print out ['Python', 'JavaScript', 'Java', 'C#', 'C++', 'JavaScript', 'PHP'] 
+
+//iv. pop()
+languages.pop(); 
+console.log(languages); //This should print out ['Python', 'JavaScript', 'Java', 'C#', 'C++', 'JavaScript'] having removed the last element, 'PHP'. 
+
+//v. shif()
+languages.shift(); 
+console.log(languages); //This should print out ['JavaScript', 'Java', 'C#', 'C++', 'JavaScript'] having removed the first element, 'Python'. 
+
+//vi. unshift()
+languages.unshift('Python'); 
+console.log(languages); //This should print out ['Python','JavaScript', 'Java', 'C#', 'C++', 'JavaScript'] having added 'Python' to the beginning of the array.
+
+//vii. map()
+var mynumbers = [10, 20, 30, 40, 50]; 
+var mydoublednumbers = mynumbers.map(function(number){ 
+return number * 2; 
+}) 
+console.log(mydoublednumbers); //This should output [20, 40, 60, 80, 100] 
+
+//viii. filter()
+var mynumbers = [1, 2, 3, 4, 5, 6]; 
+var myevennumbers = mynumbers.filter(function(number){ 
+return number % 2 == 0; //Test if the number is even 
+}) 
+console.log(myevennumbers); //This should output [2, 4, 6]
+
+//ix. reduce()
+var mynumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+var reduceOutput = mynumbers.reduce(function(accumulatedValue, number){ 
+return accumulatedValue + number; //Accumulate the sum iteratively 
+}) 
+console.log(reduceOutput); //This should output 55. 
+
+//an initial value (i.e. accumulated value) can also be passed to the reduce() method.
+var mynumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+var reduceOutput = mynumbers.reduce(function(accumulatedValue, number){ 
+return accumulatedValue + number; 
+}, 100) 
+console.log(reduceOutput); //This should output 155 i.e. 100 + the accumulated values from array
+
+//above can rewritten as this
+var mynumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+//Define the reducer function 
+var reducer = function(accumulatedValue, number){ 
+return accumulatedValue + number; 
+} 
+//Pass the reducer function to reduce() method 
+var reduceOutput = mynumbers.reduce(reducer, 100) 
+console.log(reduceOutput); //This should output 155 i.e. 100 + the accumulated values from array 
