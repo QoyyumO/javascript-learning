@@ -651,3 +651,18 @@ return accumulatedValue + number;
 //Pass the reducer function to reduce() method 
 var reduceOutput = mynumbers.reduce(reducer, 100) 
 console.log(reduceOutput); //This should output 155 i.e. 100 + the accumulated values from array 
+
+//h. Number Object 
+a = 10; //Allocate a number literal to variable 
+b = Number('10'); //The function converts the string '10' to the number equivalent. b = Number(10) should give same result. 
+c = new Number(10); //Instantiates a new Number object. c = new Number ('10') should give the same result 
+c.
+ d = a.valueOf(); //This works but is superfluous. d = a is enough 
+e = b.valueOf(); //This works but is superfluous. e = b is enough 
+f = c.valueOf(); //This is necessary for f to hold only the numeric value in c 
+console.log(a); //This should output 10 
+console.log(b); //This should output 10 
+console.log(c); //This should output [Number: 10] 
+console.log(d); //This should output 10 
+console.log(e); //This should output 10 
+console.log(f); //This should output 10 
