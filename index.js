@@ -557,9 +557,5 @@ console.log(y); //Should output the string 'Abdul'
 var y = x.slice(-16);// Extract the letters from position 16 from the rear 
 console.log(y);//This should return 'Abdul is found, …' 
 
-// f. Array Object
-//Create and initialize an array with 5 elements 
-var languages = ['Python', 'JavaScript', 'Java', 'C#', 'C++']; 
-//Use the object's length property to return the number of elements in the array. This should return 5. 
-console.log(languages.length);
+
 
