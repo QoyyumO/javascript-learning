@@ -666,3 +666,35 @@ console.log(c); //This should output [Number: 10]
 console.log(d); //This should output 10 
 console.log(e); //This should output 10 
 console.log(f); //This should output 10 
+
+//k. Error objects
+try{ 
+    console.output('Provoking an error by calling a non-existent function'); 
+    }catch(error){ 
+    console.log (error.message); //Outputs the message 'console.output is not a function' 
+    console.log (error.name); //Outputs 'TypeError' 
+} 
+
+function multiplier(){ 
+    var product = 1; 
+    if (arguments.length < 2){ 
+        throw new Error("Illegal arguments counts. Arguments must be greater than 1") 
+    } 
+    for (var x=0; x < arguments.length; x++){ 
+        product = product * arguments[x]; 
+    } 
+    return product; 
+}
+
+//Call function without arguments. Here error will be caught and message output to console 
+try{ 
+    console.log(multiplier()) 
+}catch(error){ 
+    console.log(error.message); //This will output the message 'Illegal arguments counts. Arguments must be greater than 1' 
+} 
+//Call function with arguments. No error here. 
+try{ 
+    console.log(multiplier(2,3)); //This will output 6 
+}catch(error){ 
+    console.log(error.message); 
+} 
