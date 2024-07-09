@@ -1,7 +1,7 @@
 # Javascript projects
--Vanilla Javascript
--Typescript
--EcmaScript6
--ReactJS
--Nest JS
--Vue JS 
+-Vanilla Javascript<br>
+-Typescript<br>
+-EcmaScript6<br>
+-ReactJS<br>
+-Nest JS<br>
+-Vue JS <br>
